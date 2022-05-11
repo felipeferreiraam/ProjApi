@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"
+      rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+  
+    <link rel="stylesheet" href="style.css">  
+  
+  </head>
+  <body>
+    
+      <div class="topo">
+        <img class="img_logo text-center" src="/img/Star_Wars_logo_black.svg" alt="">
+      </div>
+    
+
+    <div class="principal">
+      <div class="row">
+        <h1>May the Force be with you</h1>
+        <p>Escolha o seu personagem</p>
+        <form>
+          <select id="listaPersonagem" onchange="mudaImagem();">
+            <option value=""disabled selected>Selecione</option>
+            <option value="1">Luke</option>  
+            <option value="2">C3/PO</option>
+          </select>
+          <button id="refresh">Atualiza</button>
+        </form>
+      </div>
+    </div>
+
+   <div id="principal_lista"class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mt-5" style="width: 28rem; ">
+            <img id="imagem-personagem" src="" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+    </div>
+        <div class="col-md-6">
+          <table class="table mt-5">
+            <tr>
+              <th>#</th>
+              <th>Infomraçoes</th>
+            </tr>
+              <tr>
+                <th>Nome</th>
+                <th id="nome"></th>
+              </tr>
+              <tr>
+                <th>Altura</th>
+                <th id="altura"></th>
+              </tr>
+              <tr>
+                <th>Peso</th>
+                <th id="peso"></th>
+              </tr>
+              <tr>
+                <th>Cor do cabelo</th>
+                <th id="cabelo"></th>
+              </tr>
+              <tr>
+                <th>Data de aniversário</th>
+                <th id="aniversario"></th>
+              </tr>
+              <tr>
+                <th>Cor dos olhos</th>
+                <th id="olhos"></th>
+              </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div>
+  
+</div>
+
+<script>  
+  window.onload = function(){
+  //mudaImagem();
+    }
+  function mudaImagem(){
+    switch(document.getElementById('listaPersonagem').value) {
+      case '1': 
+        document.getElementById('imagem-personagem').src = "/img/luke.jpg";
+        fetch('https://swapi.dev/api/people/1/')
+        .then((resp) => resp.json())
+        .then((data) => {          
+         document.querySelector('#nome').insertAdjacentHTML ('afterbegin',
+          `<tr>
+             <th>` + data.name + `<th>
+            </tr>`,)
+            document.querySelector('#altura').insertAdjacentHTML ('afterbegin',
+            `<tr>
+             <th>` + data.height + `<tr>
+           </tr>`,)
+           document.querySelector('#peso').insertAdjacentHTML ('afterbegin',
+          `<tr>
+             <th>` + data.mass + `<th>
+            </tr>`,)
+            document.querySelector('#cabelo').insertAdjacentHTML ('afterbegin',
+            `<tr>
+             <th>` + data.hair_color + `<tr>
+           </tr>`,)
+           document.querySelector('#aniversario').insertAdjacentHTML ('afterbegin',
+          `<tr>
+             <th>` + data.birth_year + `<th>
+            </tr>`,)
+            document.querySelector('#olhos').insertAdjacentHTML ('afterbegin',
+            `<tr>
+             <th>` + data.eye_color + `<tr>
+           </tr>`,)
+        })
+
+    break;
+    case '2': 
+        document.getElementById('imagem-personagem').src = "/img/C-3PO.jpg";
+        fetch('https://swapi.dev/api/people/2/')
+        .then((resp) => resp.json())
+        .then((data) => {
+          document.querySelector('#nome').insertAdjacentHTML ('afterbegin',
+          `<tr>
+             <th>` + data.name + `<th>
+            </tr>`,)
+            document.querySelector('#altura').insertAdjacentHTML ('afterbegin',
+            `<tr>
+             <th>` + data.height + `<tr>
+           </tr>`,)
+           document.querySelector('#peso').insertAdjacentHTML ('afterbegin',
+          `<tr>
+             <th>` + data.mass + `<th>
+            </tr>`,)
+            document.querySelector('#cabelo').insertAdjacentHTML ('afterbegin',
+            `<tr>
+             <th>` + data.hair_color + `<tr>
+           </tr>`,)
+           document.querySelector('#aniversario').insertAdjacentHTML ('afterbegin',
+          `<tr>
+             <th>` + data.birth_year + `<th>
+            </tr>`,)
+            document.querySelector('#olhos').insertAdjacentHTML ('afterbegin',
+            `<tr>
+             <th>` + data.eye_color + `<tr>
+           </tr>`,)
+        })
+
+    break;
+    default:
+    var btn = document.querySelector("#refresh");
+btn.addEventListener("click", function() {
+    
+    location.reload();
+});
+
+}
+}
+
+</script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+
+  </body>
+</html>
