@@ -11,3 +11,5 @@ app.listen(8080, function(){
 })
 
 app.use(express.static('public'))
+app.unsubscribe(express.static('@fortawesome/fontawesome-free'))
+
