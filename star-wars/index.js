@@ -1,14 +1,17 @@
-const path = require('path')
 const express = require('express')
-const res = require('express/lib/response')
 const app = express()
 
-app.get('/', function (req, res) {
-  res.sendFile(path.resolve('index.html'))
-})
-
-app.listen(8080, function () {
-  console.log('Server Inicializado')
-})
+const routes = require('./routers')
+const {engine} = require('express-handlebars')
+const helpers = require('./helpers/handlesbars')
 
 app.use(express.static('public'))
+app.engine('handlebars', engine())
+app.set('view engine', 'handlebars')
+
+app.use('/', routes) 
+  
+
+app.listen(8080, () => {
+  console.log('Server Inicializado')
+})
