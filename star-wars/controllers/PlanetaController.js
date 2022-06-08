@@ -9,7 +9,7 @@ module.exports = class PlanetaController {
 
             let planetas = response
 
-        res.render ('planeta',{
+        res.render ('./planetas/planeta',{
             plaentas: planetas
         })
     })

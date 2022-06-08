@@ -2,17 +2,21 @@ const axios = require('axios')
 
 
 module.exports = class FilmeController {
+
     static filme (req, res) {
-        axios.get('https://swapi.dev/api/films/')
+        res.render('./filmes/filme')
+            }        
+
+static newhope (req, res) {
+  axios.get('https://swapi.dev/api/films/2/')
     .then((response) => {
       console.log(response);
-   
-    let filmes = response
-                console.log(filmes)
+     
+      let newhope = response
+      res.render('./filmes/newhope', {
+          newhope: newhope
+        })
+      })
+    }
+}
 
-                res.render('filme', {
-                  filmes: filmes
-              })
-            })
-}
-}

@@ -11,7 +11,7 @@ module.exports = class PersoangemController{
             console.log(pessoa)
 
 
-        res.render ('personagem',{
+        res.render ('./personagens/personagem',{
             pessoa: pessoa
         })
     })
