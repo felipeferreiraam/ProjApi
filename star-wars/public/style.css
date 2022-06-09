@@ -2,19 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  :root {
-  --primary-color: #D96AA7;
-  --secondary-color: #422C73;
-  --complimentary-color: #88BFB5;
-  --contrast-color: #F2E527;
-  --light-color: #D2A9D9;
+    list-style: none;
   }
   
   .container {
-   /* background: #191919; */
-    /*min-height: 100vh; */
     font-family: Montserrat, sans-serif;
   }
 
@@ -63,7 +54,6 @@
       opacity: 0;
   }
   
-  /* Styles applied on trigger */
   section:target {
       opacity: 1;
       position: absolute;
@@ -78,27 +68,7 @@
       animation: 2s fadeIn forwards .5s;
   }
   
-  #home {  
-    background:var(--primary-color);
-  }
-  #personagem {
-      background: var(--complimentary-color);
-  }
-  
-  #planeta {
-      background: var(--contrast-color);
-  }
-  
-  #nave {
-      background: var(--light-color);
-  }
-  
-  @keyframes fadeIn {
-      100% { opacity:1 }
-  }
-
-
-  .carousel-inner img {
+   .carousel-inner img {
     width: 100%;
     height: 100%;
   }
@@ -116,5 +86,8 @@
     background-image: url(./img/space-fundo.webp);
   }
   
+  #newHopeFilm{
+    padding: 50px;
+  }
 
  

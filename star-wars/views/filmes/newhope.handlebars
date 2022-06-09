@@ -1,13 +1,14 @@
-<body>
-  <div class="container ">
-    <div id= 'newhope'>
+
+  <div id="newHopeFilm" class="container mr-5">  
         {{# each newhope }}
-    
-        <h1>{{ this.title }}</h1>
-        <h2>{{ this.episode_id }}</h2>
-        <h2>{{ this.opening_crawl }}</h2>
-     </div>
-   {{/ each}}
+        <div class="row">
+          <h1>{{ this.title }}</h1>
+            <div class="#">
+          <iframe width="760" height="415" src="https://www.youtube.com/embed/vU6L3jXt2r8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>{{ this.episode_id }}</h2>
+           <p>{{ this.opening_crawl }}</p> 
+           </div>
+           </div>           
+       {{/ each }}
   </div>
- </div>  
-</body> 
+  
