@@ -7,7 +7,7 @@ module.exports =  class NaveController {
         .then((response) => {
             console.log(response);
             
-            let naves = response
+            let naves = response.data
             console.log(naves)
 
             res.render('./naves/nave', {

@@ -7,7 +7,7 @@ module.exports = class PlanetaController {
         .then((response) => {
             console.log(response)
 
-            let planetas = response
+            let planetas = response.data
 
         res.render ('./planetas/planeta',{
             plaentas: planetas

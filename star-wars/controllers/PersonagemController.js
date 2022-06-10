@@ -7,7 +7,7 @@ module.exports = class PersoangemController{
         .then((response) => {
             console.log(response)
 
-            let pessoa = response
+            let pessoa = response.data
             console.log(pessoa)
 
 

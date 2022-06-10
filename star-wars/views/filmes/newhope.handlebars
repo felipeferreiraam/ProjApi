@@ -1,19 +1,18 @@
-
+<body class="fundoFilme">
   <div class="container mr-5">
-     <section class="mr-5"></section>
-          <iframe width="760" height="415" src="https://www.youtube.com/embed/vU6L3jXt2r8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
-               
-                {{# each newhope }}
-                  <ul>
-                    <li>
-                      <h1>{{ this.title }}</h1></li>         
-                    <li>
-                      <h2> Episodio {{ this.episode_id }}</h2></li>
-                    <li>
-                      <p>{{ this.opening_crawl }}</p></li>
-                  </ul>
-                 
-            
-       {{/ each }}
-</div>
-  </section>   
+    <div id="principalFilmes">      
+      <ul>
+        <li>
+          <iframe width="90%" height="390" src="https://www.youtube.com/embed/nbTK3KE6748" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </li> 
+         <li>
+        <h2> Episodio {{ newhope.episode_id }}</h2><h1> {{ newhope.title }}</h1>
+        </li>          
+        <li>
+          <p>{{ newhope.opening_crawl }}</p>
+        </li>
+      </ul>
+   </div>                 
+</div> 
+</body>  
+   
