@@ -10,7 +10,7 @@ module.exports =  class NaveController {
             let naves = response.data
             console.log(naves)
 
-            res.render('./naves/nave', {
+            res.render('./nave', {
               naves: naves
           })
         })

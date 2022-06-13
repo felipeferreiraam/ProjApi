@@ -13,7 +13,7 @@ router.get('/filme', FilmeController.filme);
 router.get('/filmes/newhope', FilmeController.newhope);
 router.get('/filmes/empirestrikes', FilmeController.empirestrikes);
 router.get('/filmes/returnjedi', FilmeController.returnjedi);
-router.get('/personagem', PersoangemController.personagem);
+router.get('/personagem', PersoangemController.personagens);
 router.get('/planeta', PlanetaController.planeta);
 router.get('/nave', NaveController.nave)
 
