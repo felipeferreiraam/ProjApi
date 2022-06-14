@@ -191,4 +191,33 @@
   opacity:1;
 }
 
+/* Planetas */
+
+#principalPlaneta {
+  padding: 3rem;
+}
+
+#tatooine {
+  background-image: url(./img/fundo_tatooine.jpg);
+  color: white;
+  background-size: 67rem 16rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#yavin {
+  background-image: url(./img/fundo_yavin.jpg);
+  color: white;
+  background-size: 66rem 31rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: yellow;
+}
  
+#mustafar {
+  background-image: url(./img/fundo_mustafar.jpg);
+  color: white;
+  background-size: 67rem 16rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}

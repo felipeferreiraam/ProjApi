@@ -8,16 +8,16 @@ module.exports = class PlanetaController {
         res.render('./planeta')
     }
 
-    static dathStar (req, res){
-        axios.get('https://swapi.dev/api/planets/2/')
-        .then((response) => {
-            console.log(response)
+    static async planeta (req, res){
+        const tatooine = await axios.get('https://swapi.dev/api/planets/1')
+        const yavin = await axios.get('https://swapi.dev/api/planets/3')
+        const mustafar = await axios.get('https://swapi.dev/api/planets/13')
+    
 
-            let planetas = response.data
-
-        res.render ('./planetas/planeta',{
-            plaentas: planetas
-        })
-    })
+        res.render('planeta', {
+            tatooine: tatooine.data,
+            yavin: yavin.data,
+            mustafar: mustafar.data,
+          })
 }
 }
