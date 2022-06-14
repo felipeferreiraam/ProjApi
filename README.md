@@ -1,5 +1,4 @@
 # ProjApi
-Projetos de API
 
 Porjetos de consultas API dos sites ViaCEP e SWAPI (Star Wars)
 
